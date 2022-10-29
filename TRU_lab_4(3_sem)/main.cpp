@@ -17,7 +17,7 @@ int main()
 
 	bool operation  = true;
 	bool maded = false;
-	bool devKey = false;
+	bool devKey = true;
 
 	int position;
 	int size;
