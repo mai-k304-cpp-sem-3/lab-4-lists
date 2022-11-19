@@ -2,8 +2,8 @@
 #include <fstream>
 
 
-#include "Struct.h"
-#include "Functions.h"
+#include "list.h"
+#include "functions.h"
 
 const char OUT_PATH[] = "output//";      // Путь для сохранения выходных данных
 const char INPUT_FILE[] = "input.txt";

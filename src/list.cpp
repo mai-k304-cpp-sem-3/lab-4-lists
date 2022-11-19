@@ -2,21 +2,17 @@
 #include <iomanip>
 #include <fstream>
 
-#include "Functions.h"
-#include "Struct.h"
-
+#include "functions.h"
+#include "list.h"
 
 using namespace std;
 
-
 void makeList
-(	List* start,		// Первый элемент
-	int size,			// Длина списка
-	float minValue,		// Нижняя граница
-	float maxValue		// Верхняя граница
-)
-{
-
+(	List* start,		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	int size,			// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	float minValue,		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	float maxValue		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+) {
 	List* current = start;
 	List* temp;
 
@@ -29,11 +25,10 @@ void makeList
 		current = current->next;
 	}
 	current->next = NULL;
-
 }
 
 void deleteList(
-	List* start			// Первый элемент
+	List* start			// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 ) {
 	List* current = start;
 	while (start->next != NULL) {
@@ -43,8 +38,8 @@ void deleteList(
 	}
 }
 
-void consolePrintList( // Вывод списка в консоль
-	List* start	// Начало списка
+void consolePrintList( // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	List* start	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 ) {
 	List* current = start;
 	int i = 0;
@@ -58,9 +53,9 @@ void consolePrintList( // Вывод списка в консоль
 	cout << endl;
 }
 
-void filePrintList( // Вывод списка в консоль
-	List* start,	// Начало списка
-	char* fName		// Имя файла в который выводим данные
+void filePrintList( // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	List* start,	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	char* fName		// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 ) {
 	List* current = start;
 	int i = 0;
@@ -77,10 +72,10 @@ void filePrintList( // Вывод списка в консоль
 	ofs_func.close();
 }
 
-void addNewInPosition(  // Добавление в указанную позицию списка элемента 
-	List* start,		// Начало списка
-	float value,	// Значение нового элемента
-	int position	// Позиция нового элемента
+void addNewInPosition(  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
+	List* start,		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	float value,	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	int position	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 ) {
 	List* current = start;
 	List* temp = new List;
@@ -98,9 +93,9 @@ void addNewInPosition(  // Добавление в указанную позицию списка элемента
 	current->value = value;
 }
 
-void deleteInPosition(  // Добавление в указанную позицию списка элемента 
-	List* start,		// Начало списка
-	int position		// Позиция нового элемента
+void deleteInPosition(  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
+	List* start,		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	int position		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 ) {
 	List* current = start;
 	List* temp;
@@ -116,9 +111,9 @@ void deleteInPosition(  // Добавление в указанную позицию списка элемента
 	delete(temp);
 }
 
-float findMaxValue(		//Поиск наибольшего элемента
-	List* start,		// Начало списка		
-	int& position		// Позиция наибольшего элемента
+float findMaxValue(		//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	List* start,		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ		
+	int& position		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 ) {
 	List* current = start;
 	float value = current->value;
