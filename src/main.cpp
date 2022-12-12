@@ -6,7 +6,7 @@
 #include "functions.h"
 
 const char OUT_PATH[] = "output//";      // Путь для сохранения выходных данных
-const char INPUT_FILE[] = "input.txt";
+const char INPUT_FILE[] = "D:\\GitHub\\3Sem_Labs\\lab-4-lists\\src\\input.txt";
 
 using namespace std;
 int main()
@@ -17,7 +17,8 @@ int main()
 
 	bool operation  = true;
 	bool maded = false;
-	bool devKey = true;
+	//bool devKey = true;
+	bool devKey = false;
 
 	int position;
 	int size;
@@ -57,6 +58,10 @@ int main()
 				list = new List;
 				if(!devKey){
 					ifstream ifs(INPUT_FILE);
+					if (!ifs.is_open()) {
+						cout << "File not founded!" << endl;
+						exit(1);
+					}
 
 					ifs >> size;
 					ifs >> minValue;
