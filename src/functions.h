@@ -1,7 +1,16 @@
-#include "list.h"
 
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
+
+struct List {
+	List* next = NULL;
+	float value = NULL;
+};
+
+void addToStart
+(	List start*,
+	float value
+)
 
 void makeList
 (List* start,		// ?????? ???????

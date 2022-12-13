@@ -1,8 +1,6 @@
 ﻿#include <iostream>
 #include <fstream>
 
-
-#include "list.h"
 #include "functions.h"
 
 const char OUT_PATH[] = "output//";      // Путь для сохранения выходных данных
@@ -32,7 +30,7 @@ int main()
 	int answ = 0;
 	cout << "Добро пожаловать в меню." << endl;
 
-	while (answ != 6) {
+	while (answ != 0) {
 
 		if (operation = false) {
 			cout << "Введите корректный ответ.\n\n";
@@ -49,14 +47,15 @@ int main()
 			<< "Пожалуйста, укажите номер операции: ";
 		cin >> answ;
 
-		if (answ == 1 ) {
+		switch (answ) {
+		case 1:
 			if (maded) {
 				cout << "\nСначала предыдущий список должен быть удален\n";
 			}
 			else {
 				maded = true;
 				list = new List;
-				if(!devKey){
+				if (!devKey) {
 					ifstream ifs(INPUT_FILE);
 					if (!ifs.is_open()) {
 						cout << "File not founded!" << endl;
@@ -83,9 +82,9 @@ int main()
 				makeList(list, size, minValue, maxValue);
 				consolePrintList(list);
 			}
+			break;
 
-		}
-		if (answ == 2) {
+		case 2:
 			if (maded) {
 				maded = false;
 				deleteList(list);
@@ -94,8 +93,9 @@ int main()
 			else {
 				cout << "\nНевозможно удалить список так как он и не был создан.\n";
 			}
-		}
-		if (answ == 3) {
+			break;
+
+		case 3:
 			if (maded) {
 				cout << "\n\nПожалуйста, введите номер позиции элемента: ";
 				cin >> position;
@@ -107,8 +107,9 @@ int main()
 			else {
 				cout << "\nСначала нужно создать список.\n";
 			}
-		}
-		if (answ == 4) {
+			break;
+
+		case 4:
 			if (maded) {
 				cout << "\n\nПожалуйста, введите номер позиции элемента: ";
 				cin >> position;
@@ -118,8 +119,9 @@ int main()
 			else {
 				cout << "\nСначала нужно создать список.\n";
 			}
-		}
-		if (answ == 5) {
+			break;
+
+		case: 5
 			if (maded) {
 				maxValueInList = findMaxValue(list, position);
 				cout << "\n\nПозиция элемента  = " << position
@@ -128,6 +130,11 @@ int main()
 			else {
 				cout << "\nСначала нужно создать список.\n";
 			}
+			break;
+
+		case 6:
+
+			break;
 		}
 
 	}

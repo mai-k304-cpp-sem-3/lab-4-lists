@@ -3,7 +3,6 @@
 #include <fstream>
 
 #include "functions.h"
-#include "list.h"
 
 using namespace std;
 
@@ -16,7 +15,7 @@ void makeList
 	List* current = start;
 	List* temp;
 
-	srand(time(0));
+	srand(time(0)+rand());
 
 	for (int i = 0; i < size; i++) {
 		temp = new List;
@@ -72,6 +71,14 @@ void filePrintList( // ����� ������ � ������
 	ofs_func.close();
 }
 
+void addToStart(List start*,float value) {
+
+	List* next = start;
+	List* newStart = new List;
+	start = newStart;
+
+}
+
 void addNewInPosition(  // ���������� � ��������� ������� ������ �������� 
 	List* start,		// ������ ������
 	float value,	// �������� ������ ��������
@@ -90,7 +97,7 @@ void addNewInPosition(  // ���������� � ������
 	temp->next = current->next;
 	current->next = temp;
 	
-	current->value = value;
+	current->next->value = value;
 }
 
 void deleteInPosition(  // ���������� � ��������� ������� ������ �������� 
